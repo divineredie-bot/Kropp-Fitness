@@ -768,6 +768,8 @@ header{
   max-width: 490px;
 }
 
+
+
 .family{
   background-color: var(--color-dark-alternate);
 }
@@ -931,10 +933,6 @@ header{
 
   .training-types-image{
     max-width: 120px;
-  }
-
-  .join-us{
-    background-color: var(--color-dark-alternate);
   }
 
   .join-us-video-play-button{
