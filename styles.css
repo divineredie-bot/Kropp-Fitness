@@ -128,6 +128,15 @@ button {
   font: inherit;
 }
 
+input[type="number"] {
+  appearance: textfield;
+}
+
+select {
+  appearance: none;
+  background-image: none;
+}
+
 html {
   /**
     Пригодится в большинстве ситуаций
@@ -257,6 +266,14 @@ body{
     font-size: 16px;
     line-height: 1.75;
     background-color: var(--color-dark);
+}
+
+svg *[fill] {
+  fill: currentColor;
+}
+
+svg *[stroke] {
+  fill: currentColor;
 }
 
 a,button,textarea,svg *{
@@ -407,6 +424,11 @@ h1, h2, h3, h4, h5, h6{
   height: var(--input-height);
   padding-inline: 25px;
   width: 100%;
+  background-color: transparent;
+  border: var(--border);
+  border-color: var(--color-dark-gray);
+  border-radius: var(--border-radius);
+  color: var(--color-light);
 }
 
 .button:hover{
@@ -717,11 +739,6 @@ header{
 
 .join-us-form-input{
   max-width: 400px;
-  background-color: transparent;
-  border: var(--border);
-  border-color: var(--color-dark-gray);
-  border-radius: var(--border-radius);
-  color: var(--color-light);
 }
 
 .input::placeholder{
@@ -796,6 +813,237 @@ header{
   scroll-snap-align: start;
 }
 
+.calculate{
+  background-color: var(--color-dark-alternate);
+  padding-block: 146px;
+}
+
+.calculate-inner{
+  display: flex;
+  align-items: center;
+  column-gap: 36px;
+}
+
+.calculate-body{
+  flex-grow: 1;
+  max-width: 620px;
+}
+
+.calculate-title:not(:last-child){
+  margin-bottom: 16px;
+}
+
+.calculate-description{
+  max-width: 385px;
+}
+
+.calculate-form-body{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px 30px;
+}
+
+.calculate-input.wide{
+  grid-column: -1/1;
+}
+
+.calculate-form:not(:last-child){
+  margin-bottom: 26px;
+}
+
+.calculate-description:not(:last-child){
+  margin-bottom: 30px;
+}
+
+.calculate-table-wrapper{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 610px;
+}
+
+.calculate-table-wrapper::before{
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  width: 100%;
+  aspect-ratio: 1;
+  background-color: var(--color-dark);
+  border-radius: 50%;
+}
+
+.calculate-table{
+  position: relative;
+  border-collapse: collapse;
+}
+
+.calculate-table :is(td, th){
+  padding-right: 30px;
+}
+
+.calculate-table :is(td, th):not(:first-child){
+  padding-left: 30px;
+}
+
+.calculate-table :is(td, th):not(:last-child){
+  border-right: 1px solid var(--color-light-gray);
+}
+
+.calculate-table tbody td {
+  border-top: 1px solid var(--color-light-gray);
+}
+
+.calculate-table tbody tr:last-child td:first-child{
+  position: relative;
+}
+
+.calculate-table tbody tr:last-child td:first-child::after{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 70%;
+  height: 1px;
+  background-color: var(--color-light-gray);
+}
+
+.calculate-table th{
+  padding-block: 20px;
+  text-align: left;
+  text-transform: uppercase;
+  color: var(--color-light);
+}
+
+.calculate-table td{
+  padding-block: 14px;
+}
+
+.calculate-table tfoot{
+  color: var(--color-light);
+}
+
+.calculate-table tfoot td{
+  padding-top: 33px;
+  padding-bottom: 0;
+}
+
+.footer {
+  --foterLogoWidth: 20.77%;
+}
+
+.footer-main{
+  padding-top: 140px;
+  padding-bottom: 160px;
+}
+
+.footer-header,
+.footer-body {
+  display: grid;
+  column-gap: 62px;
+}
+
+.footer-header{
+  background-color: var(--color-dark);
+  grid-template-columns: var(--foterLogoWidth) auto;
+}
+
+.footer-logo-img{
+  height: auto;
+}
+
+.footer-header:not(:last-child){
+  margin-bottom: 60px;
+  padding: 0;
+}
+
+.footer-description{
+  text-align: left;
+}
+
+.footer-body{
+  display: grid;
+  grid-template-columns: var(--foterLogoWidth) repeat(3, 1fr);
+}
+
+.footer-column-title{
+  font-size: clamp(18px, 1.15vw, 22px);
+}
+
+.footer-column-title:not(:last-child){
+  margin-bottom: 15px;
+}
+
+.footer-column-title.has-arrow::after{
+  content: "";
+  content: '';
+  height: 0.74em;
+  display: inline-block;
+  background: url("icons/bold-arrow-down-right.png") center/contain no-repeat;
+  scale: -1 1;
+  margin-left: 0.5em;
+  aspect-ratio: 1;
+
+}
+
+.footer-schedule:not(:last-child){
+  margin-bottom: 13px;
+}
+
+.footer-address:not(:last-child){
+  margin-bottom: 35px;
+}
+
+.footer-subscribe{
+  position: relative;
+}
+
+.footer-subscribe:not(:last-child){
+  margin-bottom: 50px;
+}
+
+.footer-subscribe-input{
+  padding-right: 70px;
+}
+
+.footer-subscribe-button{
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  aspect-ratio: 1;
+  background: url("./icons/arrow-top-right.svg") center/70% no-repeat;
+  border: var(--border);
+  border-radius: 50%;
+}
+
+.footer-subscribe-button:hover{
+  background-color: var(--color-light-gray);
+}
+
+.footer-soc1als-list{
+  display: flex;
+  column-gap: 18px;
+}
+
+.footer-soc1als-link{
+  display: flex;
+  width: 23px;
+}
+
+
+.footer-extra{
+  padding-block: 15px;
+  background-color: var(--color-dark-alternate);
+}
+
+.footer-copyright{
+  font-size: 14px;
+}
+
 @media (max-width: 1919px){
   .motivation-card-image{
     margin-block: -20px;
@@ -855,6 +1103,46 @@ header{
     .family-image{
       height: 360px;
 }
+    .calculate{
+      padding-block: 100px;
+    }
+
+    .calculate-form-body{
+      grid-template-columns: 1fr;
+    }
+
+    .calculate-inner{
+      column-gap: 10px;
+    }
+
+    .calculate-button{
+      width: 100%;
+    }
+
+    .calculate-table :is(td, th){
+      padding-block: 10px;
+    }
+
+    .calculate-table tfoot td{
+      padding-top: 10px;
+    }
+
+    .footer-main{
+      padding-top: 80px;
+      padding-bottom: 50px;
+    }
+
+    .footer-header{
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      row-gap: 30px;
+    }
+
+    .footer-body{
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 30px;
+    }
 }
 
 @media (max-width: 767px){  
@@ -969,4 +1257,32 @@ header{
     .family-image{
       height: 180px;
 }
+    .calculate-inner{
+      flex-direction: column;
+      row-gap: 30px;
+    }
+
+    .calculate{
+      padding-block: 60px;
+    }
+
+    .calculate-table-wrapper::before{
+      display: none;
+    }
+
+    .footer-header:not(:last-child){
+      margin-bottom: 30px;
+    }
+
+    .footer-main{
+      padding-top: 50px;
+    }
+
+    .footer-body{
+      grid-template-columns: 1fr;
+    }
+
+    .footer-subscribe-button:not(:last-child){
+      margin-bottom: 40px;
+    }
 }
